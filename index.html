@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Wikis</title>
+    <script src="JS/Vue.js"></script>
+    <script src="JS/axios.js"></script>
+    <link href="normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="yue.css">
+</head>
+<body>
+    <div id="main" class="clear">
+        <div id="container-left" class="left">
+            <ul>
+                <li class="clear wiki-item" v-for="item in WikiList" :id="item.id" @click="getDetail($event)"><h3 class="left">{{ item.title }}</h3><span class="right">{{ item.cate }}</span></li>
+            </ul>
+        </div>
+
+        <div id="container-right" class="right">
+            <div id="header">
+                <div class="left" id="header-left">
+                    <h2><span> < </span>{{ title }}</h2>
+                </div>
+                <div class="right" id="header-right">
+                    <div id="nav">
+                        <a v-for="item in header_nav" :href="item.url">{{item.name}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <h2>{{ WikiDetail.title }}</h2>
+                <span v-if="WikiDetail.cate">{{ WikiDetail.cate + ' · ' + WikiDetail.date + ' · ' + WikiDetail.author }}</span>
+                <br/>
+                <br/>
+                <div class="yue" id="wiki-content" v-if="WikiDetail.contents" v-html="WikiDetail.contents">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="JS/Wiki.js?v=1"></script>
+    <script src="JS/marked.js"></script>
+</body>
+</html>

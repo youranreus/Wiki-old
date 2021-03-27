@@ -1,0 +1,127 @@
+/*basic*/
+html::-webkit-scrollbar {
+    height:8px;
+    width:8px
+}
+
+html::-webkit-scrollbar-thumb {
+    -webkit-box-shadow:inset 1px 1px 0 rgba(0,0,0,0.1),inset 0 -1px 0 rgba(0,0,0,0.07);
+    background-clip:padding-box;
+    background-color:gray;
+    min-height:40px;
+    padding-top:100px;
+    border-radius:4px
+}
+
+html::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:active {
+    background-color:#b3b3b3
+}
+
+html::-webkit-scrollbar,html *::-webkit-scrollbar {
+    height:8px;
+    width:8px;
+}
+
+html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
+    -webkit-box-shadow:inset 1px 1px 0 rgba(0,0,0,0.1),inset 0 -1px 0 rgba(0,0,0,0.07);
+    background-clip:padding-box;
+    background-color:#696969;
+    min-height:40px;
+    padding-top:100px;
+    border-radius:4px
+}
+.clear{
+    display: block;
+    clear: both;
+}
+.clear::before,.clear::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+
+
+
+
+/*header*/
+#header{
+    display: block;
+    height: 5rem;
+    line-height: 5rem;
+    width: auto;
+    background: RGBA(250,250,250,1);
+    padding: 0px 20px;
+}
+#header-left{
+    width: 40%;
+}
+#header h2{
+    padding: 0;
+    margin: 0;
+    width: auto;
+}
+
+#nav a{
+    font-size: 1.125rem;
+    font-weight: 400;
+    display: inline-block;
+    margin-left: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+#main{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* container-left */
+#container-left{
+    display: block;
+    width: 20%;
+    max-height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid #eee;
+    position: fixed;
+    height: 100vh;
+}
+#container-left ul{
+    padding: 0;
+    margin: 0;
+}
+#container-left ul li{
+    height: 60px;
+    line-height: 60px;
+    cursor: pointer;
+    padding: 0px 10px;
+}
+#container-left ul li:hover{
+    background: RGBA(250,250,250,1);
+}
+#container-left ul li h3{
+    width: 70%;
+    font-weight: bold;
+    margin: 0;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+/*container-right*/
+#container-right{
+    display: block;
+    width: 79.9%;
+}
+.content{
+    max-width: 80%;
+    margin: 50px auto 100px;
+
+}
